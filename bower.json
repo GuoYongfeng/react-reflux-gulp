@@ -1,8 +1,17 @@
 {
-  "name": "reactQa",
+  "name": "react-reflux-gulp",
   "version": "0.0.1",
+  "homepage": "https://github.com/GuoYongfeng/react-reflux-gulp",
   "authors": [
-    "guotyongfeng"
+    "guoyongfeng <296512521@qq.com>"
+  ],
+  "description": "react gulp reflux",
+  "main": "gulpfile.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "react"
   ],
   "license": "MIT",
   "ignore": [
@@ -13,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
   }
 }
