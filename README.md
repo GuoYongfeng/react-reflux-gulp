@@ -31,3 +31,7 @@
 * Mongoose数据存储
 * Director路由
 * webpack项目构建
+
+### todo
+* react和kendoui结合
+* react和现有用户列表结合
