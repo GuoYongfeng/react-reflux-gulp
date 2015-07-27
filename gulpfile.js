@@ -16,7 +16,7 @@ gulp.task('browserify', function(){
 
 gulp.task('live', function(){
 	browserSync({
-    	files: ['app/**/*.js', '*.html', 'dist/js/*.js', 'app/**/*.less'],
+    	files: ['app/**/*.js', '*.html', 'dist/js/', 'app/less/*.less'],
         server: {
             baseDir: "./"
         }

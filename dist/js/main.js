@@ -18,6 +18,7 @@ var QuestionAction = require('../actions/QuestionAction.js');
 
 module.exports = React.createClass({displayName: "exports",
 	mixins: [Reflux.connect(QuestionStore, 'questions')],
+	// component life circle
 	componentDidMount: function(){
 		QuestionAction.getAll();
 	},
@@ -49,7 +50,9 @@ module.exports = React.createClass({displayName: "exports",
 
 	},
 	onVote:function(key,newCount){
+		// Returns the new duplicate-value-free array
 		var questions = _.uniq( this.state.questions );
+		// Returns the index of the found element, else -1
 		var index = _.findIndex( questions, function(qst){
 			return qst.key == key;
 		} )
@@ -67,7 +70,7 @@ module.exports = React.createClass({displayName: "exports",
 			React.createElement("div", null, 
 				React.createElement("div", {className: "jumbotron text-center"}, 
 				    React.createElement("div", {className: "container"}, 
-				      React.createElement("h1", null, "走进React"), 
+				      React.createElement("h1", {className: "react-title"}, "拥抱React"), 
 				      React.createElement(ShowAddButton, {onToggleForm: this.onToggleForm})
 				    )
 				), 
@@ -215,33 +218,39 @@ module.exports = Reflux.createStore({
 	items: [
 		{
 			key: 1,
-			title:'数据展现',
-			description:'使用UI组件最基本的事情是做数据的展现. React可以让数据展示变得更加便捷和自动化，当数据变化的时候可以保持及时更新。',
+			title:'一些概念',
+			description:'React 元素、JSX 、虚拟DOM',
 			voteCount: 10,
 		},
 		{
 			key: 2,
-			title:'可交互可动态的UI',
-			description: "You've already learned how to display data with React. Now let's look at how to make our UIs interactive.",
+			title:'渲染(Render)',
+			description: "第一步是渲染虚拟元素（React 元素或 component）。注意，虚拟元素只存在于内存中，必须显式地告诉 React 将它渲染到浏览器上。",
 			voteCount: 8,
 		},
 		{
 			key: 3,
-			title:'组件可复用',
-			description: "So far, we've looked at how to write a single component to display data and handle user input. Next let's examine one of React's finest features: composability.",
-			voteCount: 1,
+			title:'组件(Components)',
+			description: "组件是 React 的精髓所在。它们是自定义的 React 元素，通常有一些功能和结构定义。",
+			voteCount: 7,
 		},
 		{
 			key: 4,
-			title:'Interactivity and Dynamic UIs',
-			description: "You've already learned how to display data with React. Now let's look at how to make our UIs interactive.",
-			voteCount: 2,
+			title:'属性(Props)',
+			description: "以把属性看做组件的配置参数，看起来非常像 HTML 属性。",
+			voteCount: 5,
 		},
 		{
 			key: 5,
-			title:'Interactivity and Dynamic UIs',
-			description: "You've already learned how to display data with React. Now let's look at how to make our UIs interactive.",
+			title:'状态(State)',
+			description: "状态对象用来记录随时可能变化的数据。",
 			voteCount: 3,
+		},
+		{
+			key: 6,
+			title: "组合组件(Composition)",
+			description: "将一些小的组件(components)链接起来形成一个大的组合组件。",
+			voteCount: 2
 		}
 	],
 	listenables: [QuestionAction],
@@ -250,6 +259,7 @@ module.exports = Reflux.createStore({
 
 		var newQuestions = this.items.concat( newQuestion );
 		this.trigger(newQuestions);
+		
 		// $.post('/add', model, function (data) {
             // this.items.unshift(data);
             // this.trigger(this.items);

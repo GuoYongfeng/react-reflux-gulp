@@ -1,8 +1,9 @@
-.container {
-  max-width: 800px;
-}
 .main {
   padding-bottom: 100px;
+  max-width: 800px;
+}
+.jumbotron {
+  background-color: #8cc540;
 }
 .jumbotron .container {
   position: relative;
@@ -26,4 +27,10 @@ form[name="addQuestion"] .btn {
 }
 .vote-count {
   display: block;
+}
+.media-heading {
+  color: #8cc540;
+}
+.container h1.react-title {
+  color: #fff;
 }

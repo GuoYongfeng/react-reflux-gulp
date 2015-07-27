@@ -9,6 +9,7 @@ var QuestionAction = require('../actions/QuestionAction.js');
 
 module.exports = React.createClass({
 	mixins: [Reflux.connect(QuestionStore, 'questions')],
+	// component life circle
 	componentDidMount: function(){
 		QuestionAction.getAll();
 	},
@@ -40,7 +41,9 @@ module.exports = React.createClass({
 
 	},
 	onVote:function(key,newCount){
+		// Returns the new duplicate-value-free array
 		var questions = _.uniq( this.state.questions );
+		// Returns the index of the found element, else -1
 		var index = _.findIndex( questions, function(qst){
 			return qst.key == key;
 		} )
@@ -58,7 +61,7 @@ module.exports = React.createClass({
 			<div>
 				<div className="jumbotron text-center">
 				    <div className="container">
-				      <h1>走进React</h1>
+				      <h1 className="react-title">拥抱React</h1>
 				      <ShowAddButton onToggleForm={this.onToggleForm} />
 				    </div>
 				</div>
