@@ -23,7 +23,9 @@
   "dependencies": {
     "knockout": "^3.3.0",
     "lodash": "^3.10.0",
+    "rctui": "^0.3.1",
     "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "reactify": "^1.1.1",
     "reflux": "^0.2.11"
   },
