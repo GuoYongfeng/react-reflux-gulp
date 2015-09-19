@@ -4,10 +4,14 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	less = require('gulp-less'),
 	browserSync = require('browser-sync'),
-	port = process.env.port || 5000;
+	port = process.env.port || 5000,
+	es6transpiler = require('gulp-es6-module-transpiler');
 
 gulp.task('browserify', function(){
 	gulp.src(['./app/js/main.js', './app/js/app.js', './app/js/ko.js'])
+	// .pipe(es6transpiler({
+	// 	formatter: 'commonjs'
+	// }))
 	.pipe(browserify({
 		transform: 'reactify',
 	}))

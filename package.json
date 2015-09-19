@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/GuoYongfeng/react-reflux-gulp#readme",
   "dependencies": {
+    "gulp-es6-module-transpiler": "^0.2.2",
     "knockout": "^3.3.0",
     "lodash": "^3.10.0",
-    "rctui": "^0.3.1",
+    "rctui": "^0.3.2",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
+    "react-ui": "^0.4.24",
     "reactify": "^1.1.1",
     "reflux": "^0.2.11"
   },
